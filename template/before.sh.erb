@@ -9,7 +9,7 @@ if [[ ! -e ~/.apptainer ]]; then
     ln -sr ~/work/.apptainer ~/.apptainer
 fi
 
-export RSTUDIO_SERVER_IMAGE=/opt/ood/singularity-images/<%= context.apptainer_image %>
+export RSTUDIO_SERVER_IMAGE=<%= context.apptainer_image %>
 
 # Define a password and export it for RStudio authentication
 password="$(create_passwd 16)"

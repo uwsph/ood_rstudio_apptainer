@@ -1,42 +1,20 @@
 ---
-cluster: "research"
+cluster: "hpc_sph_washington_edu"
 form:
-  - r_provider
-  - miniconda_path
   - apptainer_image
-  - bih_cpus
-  - bih_mem
-  - bih_days
-  - bih_partition
+  - sph_cpus
+  - sph_mem
+  - sph_days
+  - sph_partition
 attributes:
-  r_provider:
-    widget: "select"
-    label: "R Source"
-    help: |
-      You can either use R from within the provided Apptainer image (based
-      on the Rocker project) or provide a path to your miniconda
-      installation.
-    options:
-      - [ "Apptainer", "apptainer" ]
-      - [ "miniconda",   "miniconda"   ]
-  miniconda_path:
-    widget: "text_field"
-    label: "Miniconda Path"
-    help: |
-      Specify the path including the "bin" of the Miniconda3 installation
-      that you want to use.  Separate name of environment with a colon.
-      Example: `~/miniconda3/bin:fancy-r`.
   apptainer_image:
-    widget: "select"
+    widget: "text_field"
     label: "Apptainer Image"
     help: |
       The Apptainer images are not always up to date. Missing packages?
       Try to build and use your own miniconda environment!
-    options:
-      - [ "rocker-rstudio_4.3.2.sif", "rocker-rstudio_4.3.2.sif" ]
-      - [ "rocker-rstudio_4.3.3.sif", "rocker-rstudio_4.3.3.sif"  ]
-      - [ "rocker-rstudio_4.4.1.sif (beta)", "rocker-rstudio_4.4.1.sif"  ]
-  bih_cpus:
+      Example: `~/path/to/rstudio.sif`.
+  sph_cpus:
     widget: "number_field"
     label: "Number of cores"
     value: 4
@@ -44,14 +22,14 @@ attributes:
     min: 1
     max: 64
     step: 1
-  bih_mem:
+  sph_mem:
     widget: "number_field"
     label: "Memory [GiB]"
     value: 4
     help: Memory to allocate for job.
     min: 1
     max: 256
-  bih_days:
+  sph_days:
     widget: "number_field"
     label: "Running time [days]"
     value: 1
@@ -59,13 +37,9 @@ attributes:
     min: 1
     max: 14
     step: 1
-  bih_partition:
-    widget: select
+  sph_partition:
+    widget: text_field
     label: "partition to run in"
-    value: "long"
     help: |
-      - **medium** - at most 7 days available (up to 128 cores in all jobs)
-      - **long** - at most 28 days available (upt o 32 cores in all jobs)
-    options:
-      - [ "medium", "medium" ]
-      - [ "long", "long" ]
+      The cluster partition you wish to run your job in.
+      Example: 12c128g
