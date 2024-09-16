@@ -72,5 +72,4 @@ apptainer run --no-home -B "$BINDS" \
   --auth-stay-signed-in-days 30 \
   --auth-pam-helper-path "${RSTUDIO_AUTH}" \
   --auth-encrypt-password 0 \
-  --rsession-path "${RSESSION_WRAPPER_FILE}" \
-  --server-data-dir='/tmp/run'
+  --rsession-path "${RSESSION_WRAPPER_FILE}"
