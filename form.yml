@@ -11,8 +11,8 @@ attributes:
     widget: "text_field"
     label: "Apptainer Image"
     help: |
-      The Apptainer images are not always up to date. Missing packages?
-      Try to build and use your own miniconda environment!
+      We recommend images from the Rocker project or those
+      based on them.
       Example: `~/path/to/rstudio.sif`.
   sph_cpus:
     widget: "number_field"
