@@ -14,9 +14,6 @@ working_dir_container = working_dir_host
 # PAM auth helper used by RStudio
 export RSTUDIO_AUTH=$(readlink -f "<%= working_dir_container %>/bin/auth")
 
-source "<%= working_dir_container %>/.env"
-
-
 # Generate an `rsession` wrapper script
 export RSESSION_WRAPPER_FILE="<%= working_dir_container %>/rsession.sh"
 (
