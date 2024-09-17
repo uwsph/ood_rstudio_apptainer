@@ -5,7 +5,7 @@ form:
   - sph_cpus
   - sph_mem
   - sph_days
-  - sph_partition
+  - auto_queues
 attributes:
   apptainer_image:
     widget: "text_field"
@@ -37,9 +37,9 @@ attributes:
     min: 1
     max: 14
     step: 1
-  sph_partition:
-    widget: text_field
-    label: "partition to run in"
+  auto_queues:
+    widget: select
+    label: "Partition to run in"
     help: |
       The cluster partition you wish to run your job in.
       Example: 12c128g
