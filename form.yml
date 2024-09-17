@@ -6,6 +6,7 @@ form:
   - sph_mem
   - sph_days
   - auto_queues
+  - auto_accounts
 attributes:
   apptainer_image:
     widget: "text_field"
@@ -43,3 +44,9 @@ attributes:
     help: |
       The cluster partition you wish to run your job in.
       Example: 12c128g
+  auto_accounts:
+    widget: select
+    label: "Account to run job under"
+    help: |
+      The cluster account you wish to run your job under.
+      Example: sph
