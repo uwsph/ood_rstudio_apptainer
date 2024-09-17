@@ -11,6 +11,8 @@ attributes:
   apptainer_image:
     widget: "path_selector"
     label: "Apptainer Image"
+    favorites:
+      - /projects/demo/apptainer
     help: |
       We recommend images from the Rocker project or those
       based on them.
