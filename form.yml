@@ -9,7 +9,7 @@ form:
   - auto_accounts
 attributes:
   apptainer_image:
-    widget: "text_field"
+    widget: "path_selector"
     label: "Apptainer Image"
     help: |
       We recommend images from the Rocker project or those
