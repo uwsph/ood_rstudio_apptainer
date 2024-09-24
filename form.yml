@@ -4,7 +4,7 @@ form:
   - apptainer_image
   - sph_cpus
   - sph_mem
-  - sph_days
+  - bc_num_hours
   - auto_queues
   - auto_accounts
 attributes:
@@ -32,14 +32,6 @@ attributes:
     help: Memory to allocate for job.
     min: 1
     max: 256
-  sph_days:
-    widget: "number_field"
-    label: "Running time [days]"
-    value: 1
-    help: Number of days to run.
-    min: 1
-    max: 14
-    step: 1
   auto_queues:
     widget: select
     label: "Partition to run in"

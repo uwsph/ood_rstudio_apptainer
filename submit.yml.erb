@@ -1,7 +1,6 @@
 <%-
   cpus = sph_cpus.to_i
   mem = sph_mem.to_i
-  days = sph_days.to_i
 -%>
 ---
 batch_connect:
@@ -9,14 +8,10 @@ batch_connect:
   conn_params:
     - csrf_token
 script:
+  accounting_id: "<%= auto_accounts %>"
+  queue_name: "<%= auto_queues %>"
   native:
     - "--cpus-per-task"
     - "<%= cpus %>"
     - "--mem"
     - "<%= mem * 1024 %>"
-    - "--partition"
-    - "<%= auto_queues %>"
-    - "--account"
-    - "<%= auto_accounts %>"
-    - "--time"
-    - "<%= days %>-0"
